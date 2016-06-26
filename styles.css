@@ -1,0 +1,26 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+header {
+    background: grey;
+    height: 50px;
+    width: 100%;
+}
+
+#map-container {
+    height: calc(100vh - 50px);
+    width: 100%;
+}
+
+#bikeForm {
+   
+    margin: 10px 10px;
+}
+
+#map {
+  height: 100%;
+  margin: 0;
+}
+

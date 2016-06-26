@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <script src="http://maps.googleapis.com/maps/api/js"></script>
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+ <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+ <!-- JS file -->
+<script src="jquery.easy-autocomplete.min.js"></script> 
+
+<!-- CSS file -->
+<link rel="stylesheet" href="easy-autocomplete.min.css"> 
+
+<!-- Additional CSS Themes file - not required-->
+<link rel="stylesheet" href="easy-autocomplete.themes.min.css"> 
+ <link rel="stylesheet" type="text/css" href="styles.css">
+ <script src="map.js"></script>
+  <script src="bikes.js"></script>
+  <style>
+
+  .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    padding:0;
+  }
+
+  #closeConfirm{
+        color: white;
+    /* margin-bottom: 36px; */
+    position: absolute;
+    right: 14px;
+    top: 52px;
+    padding: 10px;
+  }
+.btn-info{
+  color: gray;
+    background-color: #E7FF0B;
+    border-color: #E7FF0B;
+}
+  .btn-info:hover,.btn-info:active{
+  color: gray;
+    background-color: #E7FF0B;
+    border-color: #E7FF0B;
+}
+
+#logo{
+ 
+    background-image: url('dropshadowlogo.png');
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+
+}
+  </style>
+</head>
+
+<body>
+ <header>
+ </header>
+ <form role="form" id="bikeForm">
+   <div class="form-group">
+     
+     <input type="text" class="form-control" id="currentPlace" placeholder="Enter Source Place">
+   </div>
+   <div class="form-group">
+    
+     <input type="text" class="form-control"   id="destinationPlace"    placeholder="Enter Destination">
+   </div>
+   <div class="form-group">
+     <button type="button" class="btn btn-info btn-block" id="getBikes">Get Bike</button>
+   </div>
+ </form>
+
+ <div class="panel panel-primary" id="reservationDetails" style="margin-bottom:0px">
+  <div class="panel-heading">
+    <h3 class="panel-title">Reservation Details</h3>
+  </div>
+  <div class="panel-body" style="padding-top: 0px;padding-bottom:0px">
+    <div class="table-responsive">
+  <table class="table">
+   
+<thead>
+    <tr>
+      <td></td>
+      <td style="font-weight: bold;">Time</td>
+      <td style="font-weight: bold; text-align:right;">Price</td>
+    </tr>
+  </thead>
+    <tbody>
+    <tr>
+      <td>Walk</td>
+      <td>3 min</td>
+      <td></td>
+    </tr>
+     <tr>
+      <td>Pickup</td>
+      <td>10:00am-10:10am</td>
+      <td style="text-align:right;">-$0.70</td>
+    </tr>
+     <tr>
+      <td>Ride</td>
+      <td>12 min (10&cent/min)</td>
+      <td style="text-align:right;">-$1.20</td>
+    </tr>
+    <tr>
+      <td>Drop Off</td>
+      <td>10:20am-10:30am</td>
+      <td style="text-align:right;">+$2.00</td>
+    </tr>
+     <tr>
+      <td>Walk</td>
+      <td>0.1mi</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td style="font-weight: bold;text-align:right;">Total: -$0.10</td>
+    </tr>
+  </tbody>
+  </table>
+  </div>
+
+  </div>
+
+  <div class="form-group" style="margin-left:15px;margin-right:10px">
+     <button type="button" class="btn btn-info" style="width:49%" id="confirmReservation">Confirm</button>
+     <button type="button" class="btn btn-info" style="width:49%" id="cancelReservation">Cancel</button>
+   </div>
+</div>
+
+<div class="panel panel-primary" id="confirmation" style="margin-bottom:0px">
+  <div class="panel-heading">
+    <h3 class="panel-title">Success</h3>
+
+    <a id="closeConfirm">X</a>
+  </div>
+  <div class="panel-body">
+    Congratulations!! Your reservations confirmed.
+  </div>
+</div>
+</div>
+ <div id="map-container">
+  <div id="map"></div>
+ </div>
+ <div id="logo"><div>
+</body>
+
+
+</html>
